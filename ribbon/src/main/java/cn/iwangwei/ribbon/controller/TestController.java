@@ -17,11 +17,11 @@ public class TestController {
 
     @GetMapping("/test")
     public String test() {
-        String test = restTemplate.getForObject("http://micro-service2/test", String.class);
+        String test = restTemplate.getForObject("http://micro-service2/test/1", String.class);
         System.out.println("ribbon : "+test);
 
         System.out.println("services : " + discoveryClient.getServices());
 
-        return "test ribbon";
+        return "ribbon : "+test;
     }
 }
