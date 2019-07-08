@@ -11,5 +11,5 @@ public interface FeignService2 {
 
 //    @RequestMapping(value = "/test", method = RequestMethod.GET)
     @GetMapping(value = "/test/{id}")
-    String test(@PathVariable("id") String id); // @PathVariable必须有value，否则会报错，这是个坑，得注意
+    String test(@PathVariable("id") String id);
 }

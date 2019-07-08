@@ -1,0 +1,21 @@
+#指定注册中心地址
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#服务的名称
+spring:
+  application:
+    name: qbm
+  #指定从哪个配置中心读取
+  cloud:
+    config:
+      discovery:
+        service-id: config-server-jdbc
+        enabled: true
+      profile: core,solr,oss,solr-product
+      label: dev
+
+server:
+  port: 8071
