@@ -1,4 +1,4 @@
-package cn.iwangwei;
+package com.xkw;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,17 +10,17 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@EnableEurekaClient
 @EnableHystrix
-public class MicroService1Application {
+@EnableEurekaClient
+public class HystrixApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MicroService1Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(HystrixApplication.class, args);
+    }
 
-	@Bean
-	@LoadBalanced
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
+    @Bean
+    @LoadBalanced
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 }
